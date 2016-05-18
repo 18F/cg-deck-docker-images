@@ -8,6 +8,7 @@ RUN apt-get update && \
 	jwm \
 	x11vnc \
 	xvfb \
+	gcc \
 	git \
 	zip \
 	unzip \
@@ -27,7 +28,7 @@ ENV GOPATH $HOME/workplace
 ENV GOROOT $HOME/go
 ENV CODEPATH $GOPATH/src/github.com/18F/cg-deck
 
-RUN wget https://storage.googleapis.com/golang/go1.5.2.linux-amd64.tar.gz -O $HOME/go.tar.gz && \
+RUN wget https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz -O $HOME/go.tar.gz && \
 	mkdir $HOME/go && tar -C $HOME -xzf $HOME/go.tar.gz && rm $HOME/go.tar.gz && \
 	ln -s $HOME/go/bin/go /bin/go
 
